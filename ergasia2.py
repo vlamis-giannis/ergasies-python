@@ -20,29 +20,13 @@ while not number:
             chek=[]
             #επιλογή των 20 τυχαίων αριθμών
             for e in range(20):
-                lst=list(range(1,1000))
-                random.shuffle(lst)
-                a=lst.pop()
-                if a<g:
-                    #print(a)
-                    b=pow(a,g,g)
-                    if b==a:
-                        chek.append("1")
-                    else:
-                        chek.append("0")
-                        break
+                a=random.randrange(g)
+                b=pow(a,g,g)
+                if b==a:
+                    chek.append("1")
                 else:
-                    lst=list(range(1,g))
-                    random.shuffle(lst)
-                    a=lst.pop()
-                    #print(a)
-                    b=pow(a,g,g)
-                    if b==a:
-                        chek.append("1")
-                    else:
-                        chek.append("0")
-                        break
-            lst.sort()
+                    chek.append("0")
+                    break
             print("\n")
             #έλεγχος για τον αν ο αριθμός ειναι πρώτος
             z=chek.count("1")
